@@ -1,4 +1,5 @@
 class Pet < ApplicationRecord
-  validates :name, presence: true
-  validates :species, inclusion: { in: ['dog', 'cat', 'bird', 'snake'] }
+  SPECIES = ['dog', 'cat', 'bird', 'snake', 'horse', 'turtle']
+  validates :name, :species, presence: true
+  validates :species, inclusion: { in: SPECIES }
 end
